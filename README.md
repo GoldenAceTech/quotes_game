@@ -1,5 +1,4 @@
-# quotes_game
-QUOTE SCRAPING GAME
+#QUOTE-SCRAPING-GAME
 This is a scrapy project that uses scrapy module.
 It scrapes quotes and author informations from quotestoscrape.com and the scrape data are saved in the database using sqlite3. The data are then used to play a game where a quote is generated and a player is allowed three guesses for the correct name of the author.
 

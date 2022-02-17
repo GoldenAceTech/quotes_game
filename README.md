@@ -7,8 +7,8 @@ RUN THE PROCESS_SCRAPE_DATA MODULE TO SCRAPE THE QUOTES DATA AND SAVE IT IN A DA
 -The database will create a database called quotes.db where quotes and author's informations are saved
 
 RUN THE GAME MODULE TO START GAME
-#Users are allowed to guess 4 time the name of the person who made the quotes
-#For each failed guess, user's are given hints
+Users are allowed to guess 4 time the name of the person who made the quotes.
+For each failed guess, user's are given hints the following hints:
 - Birthdate and location of author
 - The first letter of author first name
 - The first letter of author last name

@@ -1,7 +1,6 @@
 import random
 from db_method.db_config import Query_Db
 
-
 class Quote_Game:
     __rows = list(range(1, 101))
     author: tuple[str] = None

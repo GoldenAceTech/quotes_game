@@ -82,7 +82,7 @@ class Quote_Game:
         Returns:
             set: A set containg author's first name and last name
         """
-        name_list = Quote_Game.author[0].casefold().split()
+        name_list = Quote_Game.author[0].casefold().replace('.', '').split()
         if len(name_list) > 2:
             return {name_list[0].removesuffix('.'), name_list[-1].removesuffix('.')}
         return set(name.removesuffix('.') for name in name_list)
@@ -124,13 +124,13 @@ class Quote_Game:
             full_name (set): A set contain the author first and last name
         """
         hints = {self.first_hint(), self.second_hint(), self.third_hint()}
-        while user_guess.isdisjoint(full_name):
+        while user_guess != full_name:
             if not hints:
                 print("You used up all tries, game over! \n")
                 break
             print(f'HINT: {hints.pop()}\n')
             guess = input('Try again: ')
-            user_guess = set(guess.removesuffix('.').casefold().split())
+            user_guess = set(guess.replace('.', '').casefold().split())
         else:
             Quote_Game.__correct_guesses += 1
             print('You got it right, good job!\n')

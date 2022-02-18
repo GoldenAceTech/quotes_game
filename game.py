@@ -84,8 +84,8 @@ class Quote_Game:
         """
         name_list = Quote_Game.author[0].casefold().replace('.', '').split()
         if len(name_list) > 2:
-            return {name_list[0].removesuffix('.'), name_list[-1].removesuffix('.')}
-        return set(name.removesuffix('.') for name in name_list)
+            return {name_list[0], name_list[-1]}
+        return set(name for name in name_list)
 
     def first_hint(self) -> str:
         """Get a hint with the author birth information
@@ -161,8 +161,8 @@ class Quote_Game:
             full_name = self.full_name_set()
             print(f'The quote is: \n {quote}')
             name = input('Who is the author:  \n')
-            name_set = set(name.removesuffix('.').casefold().split())
-            self.give_hints(name_set, full_name)        
+            guess_set = set(name.replace('.', '').casefold().split())
+            self.give_hints(guess_set, full_name)        
             print(f"The author name is {Quote_Game.author[0].title()}")
             self.restart()
         else:
